@@ -1,6 +1,7 @@
 import React from 'react';
 import UserDoctor from '../../assets/user-doctor-solid-full.svg';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -8,16 +9,16 @@ const Navbar = () => {
     const navLinks = document.querySelector(".nav__links");
     const navIcon = document.querySelector(".nav__icon i");
 
-    // Toggle the 'active' class on the navigation links
-    navLinks.classList.toggle("active");
+    // Toggle the 'active' className on the navigation links
+    navLinks.classNameList.toggle("active");
 
     // Toggle the Font Awesome icons (bars and times)
-    if (navLinks.classList.contains("active")) {
-      navIcon.classList.remove("fa-bars");
-      navIcon.classList.add("fa-times");
+    if (navLinks.classNameList.contains("active")) {
+      navIcon.classNameList.remove("fa-bars");
+      navIcon.classNameList.add("fa-times");
     } else {
-      navIcon.classList.remove("fa-times");
-      navIcon.classList.add("fa-bars");
+      navIcon.classNameList.remove("fa-times");
+      navIcon.classNameList.add("fa-bars");
     }
   }
 
@@ -25,7 +26,7 @@ const Navbar = () => {
     <>
       <nav>
         {/* <!-- Navigation logo section --> */}
-        <div class="nav__logo">
+        <div className="nav__logo">
           {/* <!-- Link to the home page --> */}
           <a href="/">
             StayHealthy
@@ -36,32 +37,32 @@ const Navbar = () => {
           <span>.</span>
         </div>
         {/* <!-- Navigation icon section with an onClick event listener --> */}
-        <div class="nav__icon" onClick={handleClick}>
+        <div className="nav__icon" onClick={handleClick}>
           {/* <!-- Font Awesome icon for bars (hamburger menu) --> */}
-          <i class="fa fa-times fa fa-bars"></i>
+          <i className="fa fa-times fa fa-bars"></i>
         </div>
 
-        {/* <!-- Unordered list for navigation links with 'active' class --> */}
-        <ul class="nav__links active">
+        {/* <!-- Unordered list for navigation links with 'active' className --> */}
+        <ul className="nav__links active">
           {/* <!-- List item for the 'Home' link --> */}
-          <li class="link">
+          <li className="link">
             <a href="../Landing_Page/LandingPage.html">Home</a>
           </li>
           {/* <!-- List item for the 'Appointments' link --> */}
-          <li class="link">
+          <li className="link">
             <a href="#">Appointments</a>
           </li>
           {/* <!-- List item for the 'Sign Up' link with a button --> */}
-          <li class="link">
-            <a href="../Sign_Up//Sign_Up.html">
-              <button class="btn1">Sign Up</button>
-            </a>
+          <li className="link">
+            <Link to='/sign-up'>
+              <button className="btn1">Sign Up</button>
+            </Link>
           </li>
           {/* <!-- List item for the 'Login' link with a button --> */}
-          <li class="link">
-            <a href="../Login/Login.html">
-              <button class="btn1">Login</button>
-            </a>
+          <li className="link">
+            <Link to="/login">
+              <button className="btn1">Login</button>
+            </Link>
           </li>
         </ul>
       </nav>
