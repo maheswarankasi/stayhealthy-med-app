@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body {
-    background: url('../images/header-bg-desk.jpg') no-repeat;
+    /* background: url('../../assets/header-bg-desk.jpg') no-repeat; */
 }
 .hero-section {
     height: 100vh;
