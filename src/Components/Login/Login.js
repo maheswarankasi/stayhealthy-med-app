@@ -5,7 +5,7 @@ import './Login.css'
 const Login = () => {
     return (
         <>
-            <div className="container" style={{ margin: '10%' }}>
+            <div className="container" style={{ marginTop: '10%' }}>
                 {/* Div for login grid layout */}
                 <div className="login-grid">
                     {/* Div for login text */}
@@ -23,7 +23,7 @@ const Login = () => {
                             {/* Form group for email input */}
                             <div className="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" name="email" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$' id="email" className="form-control" placeholder="Enter your email"
+                                <input type="email" name="email" pattern="[\-a-zA-Z0-9~!$%^&amp;*_=+\}\{'?]+(\.[\-a-zA-Z0-9~!$%^&amp;*_=+\}\{'?]+)*@[a-zA-Z0-9_][\-a-zA-Z0-9_]*(\.[\-a-zA-Z0-9_]+)*\.[cC][oO][mM](:[0-9]{1,5})?" id="email" className="form-control" placeholder="Enter your email"
                                     aria-describedby="helpId" />
                             </div>
                             {/* Form group for password input */}
