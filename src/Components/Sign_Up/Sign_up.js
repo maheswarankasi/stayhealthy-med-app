@@ -14,7 +14,7 @@ const Sign_up = () => {
 
     const register = async (e) => {
         e.preventDefault();
-
+        // console.log(e.target.name.value);
         // API Call to register user
         const response = await fetch(`${API_URL}/api/auth/register`, {
             method: "POST",
@@ -65,26 +65,26 @@ const Sign_up = () => {
 
                         <div className="form-group"> {/* Form group for user's name*/}
                             <label htmlFor="name">Name</label> {/* Label for name input field*/}
-                            <input type="text" name="name" id="name" required className="form-control" placeholder="Enter your name"
+                            <input type="text" name="name" id="name" required className="form-control" placeholder="Enter your name" value={name} onChange={(e)=>setName(e.target.value)} 
                                 aria-describedby="helpId" /> {/* Text input field for name*/}
                         </div>
 
                         <div className="form-group"> {/* Form group for user's phone number*/}
                             <label htmlFor="phone">Phone</label> {/* Label for phone input field*/}
-                            <input type="tel" name="phone" id="phone" required className="form-control" maxLength="10" 
+                            <input type="tel" name="phone" id="phone" required className="form-control" maxLength="10" value={phone} onChange={(e)=>setPhone(e.target.value)}
                                 placeholder="Enter your phone number" pattern="\d{10}" aria-describedby="helpId" />
                             {/* Tel input field for phone number*/}
                         </div>
 
                         <div className="form-group"> {/* Form group for user's email*/}
                             <label htmlFor="email">Email</label> {/* Label for email input field*/}
-                            <input type="email" name="email" pattern="[\-a-zA-Z0-9~!$%^&amp;*_=+\}\{'?]+(\.[\-a-zA-Z0-9~!$%^&amp;*_=+\}\{'?]+)*@[a-zA-Z0-9_][\-a-zA-Z0-9_]*(\.[\-a-zA-Z0-9_]+)*\.[cC][oO][mM](:[0-9]{1,5})?" id="email" required className="form-control" placeholder="Enter your email"
+                            <input type="email" name="email" pattern="[\-a-zA-Z0-9~!$%^&amp;*_=+\}\{'?]+(\.[\-a-zA-Z0-9~!$%^&amp;*_=+\}\{'?]+)*@[a-zA-Z0-9_][\-a-zA-Z0-9_]*(\.[\-a-zA-Z0-9_]+)*\.[cC][oO][mM](:[0-9]{1,5})?" id="email" required className="form-control" placeholder="Enter your email" value={email} onChange={(e)=>setEmail(e.target.value)}
                                 aria-describedby="helpId" /> {/* Email input field*/}
                         </div>
 
                         <div className="form-group"> {/* Form group for user's password*/}
                             <label htmlFor="password">Password</label> {/* Label for password input field*/}
-                            <input name="password" id="password" required className="form-control" placeholder="Enter your password"
+                            <input name="password" id="password" required className="form-control" placeholder="Enter your password" value={password} onChange={(e)=>setPassword(e.target.value)}
                                 aria-describedby="helpId" /> {/* Password input field*/}
                         </div>
 

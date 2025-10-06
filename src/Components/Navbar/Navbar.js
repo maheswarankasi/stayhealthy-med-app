@@ -40,11 +40,23 @@ const Navbar = () => {
     }
     useEffect(() => {
         const storedemail = sessionStorage.getItem("email");
+        console.log(storedemail);
+        const namePart = storedemail.split('@')[0];
+
+        // Replace dots, underscores, and hyphens with spaces
+        const cleanedName = namePart.replace(/[._-]/g, ' ');
+
+        // Capitalize each word
+        const capitalizedName = cleanedName
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
 
         if (storedemail) {
             setIsLoggedIn(true);
             setUsername(storedemail);
         }
+        return capitalizedName;
     }, []);
     return (
         <nav>
@@ -71,6 +83,9 @@ const Navbar = () => {
                 </li>
                 {isLoggedIn ? (
                     <>
+                        <li className="link">
+                            Welcome {capitalizedName}
+                        </li>
                         <li className="link">
                             <button className="btn2" onClick={handleLogout}>
                                 Logout
